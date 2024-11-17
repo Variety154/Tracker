@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+protocol TrackersViewControllerProtocol {
+    var currentDate: Date { get }
+    
+    func showNewHabitViewController()
+    func showIrregularEventController()
+    func didCreateNewTracker(tracker: Tracker)
+    func didCreateTrackerRecord(tracker: Tracker, date: Date) -> Int
+}
