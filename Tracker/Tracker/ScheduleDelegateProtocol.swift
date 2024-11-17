@@ -5,4 +5,6 @@
 //  Created by Varvara Kiseleva on 17.11.2024.
 //
 
-import Foundation
+protocol ScheduleDelegateProtocol: AnyObject {
+    func didSelectDays(_ selectedDays: [WeekDays])
+}
