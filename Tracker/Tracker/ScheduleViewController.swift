@@ -124,6 +124,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = day.description
         
         let switchView = UISwitch()
+        switchView.onTintColor = .ysBlue
         switchView.isOn = selectedDays.contains(day)
         switchView.tag = indexPath.row + 1 // Используем tag для хранения значения дня недели
         switchView.addTarget(self, action: #selector(switchChanged(_:)), for: .valueChanged)
