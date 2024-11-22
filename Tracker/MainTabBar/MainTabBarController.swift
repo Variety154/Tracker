@@ -39,6 +39,7 @@ final class MainTabBarController: UITabBarController {
         
         let statisticsViewController = StatisticsViewController()
         statisticsViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Hare"), tag: 1)
+        statisticsViewController.tabBarItem.title = "Статистика"
         self.viewControllers = [trackerViewController, statisticsViewController]
     }
 }

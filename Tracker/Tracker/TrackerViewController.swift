@@ -63,6 +63,7 @@ final class TrackersViewController: LightStatusBarViewController {
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Поиск"
         return searchController
     }()
     
