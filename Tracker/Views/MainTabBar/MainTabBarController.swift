@@ -19,7 +19,6 @@ final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        addTabItems()
     }
     
     private func setupLayout() {
@@ -33,7 +32,7 @@ final class MainTabBarController: UITabBarController {
         ])
     }
     
-    private func addTabItems() {
+    func addTabItems(){
         let trackerViewController = UINavigationController(rootViewController: TrackersViewController())
         trackerViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Record"), tag: 0)
         

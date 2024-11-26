@@ -18,31 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let tabBarController = MainTabBarController()
+        tabBarController.addTabItems()
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {
-        
-    }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        
-    }
-
     func sceneDidEnterBackground(_ scene: UIScene) {
-        
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-
 }
+
 
