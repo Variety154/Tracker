@@ -8,7 +8,8 @@
 import Foundation
 
 protocol NewTrackerDelegateProtocol: AnyObject {
-    func didSelectDays(_ selectDays: WeekDays)
+    func didSelectDays(_ selectedDays: WeekDays)
     func didSelectEmoji(_ indexPath: IndexPath)
     func didSelectColor(_ indexPath: IndexPath)
+    func didSelectCategory(category: String)
 }
