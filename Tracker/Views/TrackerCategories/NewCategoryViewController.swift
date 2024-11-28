@@ -20,13 +20,14 @@ final class NewCategoryViewController: LightStatusBarViewController {
     }()
     
     private lazy var categoryTextField: UITextField = {
-        let textField = UITextField()
+        let textField = PaddedTextField()
+//        let textField = UITextField()
         textField.placeholder = "Введите название категории"
         textField.font = Fonts.textFieldFont
         textField.backgroundColor = .ysBackground
         textField.layer.cornerRadius = Constants.radius
         textField.layer.masksToBounds = true
-        textField.textAlignment = .center
+//        textField.textAlignment = .center
         textField.delegate = self
         textField.addTarget(self, action: #selector(categoryTextFieldChanged), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false

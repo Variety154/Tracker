@@ -14,7 +14,7 @@ enum TrackerCategoryStoreError: Error {
 
 final class TrackerCategoryStore: BasicStore {
     
-    var delegate: StoreDelegate?
+    weak var delegate: StoreDelegate?
     
     
     private lazy var fetchedResultsController: NSFetchedResultsController<TrackerCategoryCoreData> = {

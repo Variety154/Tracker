@@ -9,7 +9,7 @@ import UIKit
 
 final class CategoryTableViewCell: UITableViewCell {
     
-    let trackerLabel: UILabel = {
+    private let trackerLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.titleMediumFont
         label.textColor = .black
@@ -17,7 +17,7 @@ final class CategoryTableViewCell: UITableViewCell {
         return label
     }()
     
-    let selectedImageView: UIImageView = {
+    private let selectedImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true

@@ -12,7 +12,7 @@ enum TrackerDecodingError: Error {
 }
 
 final class TrackerStore: BasicStore {
-    var delegate: StoreDelegate?
+    weak var delegate: StoreDelegate?
     
     private var trackerCategoryStore = TrackerCategoryStore()
     
