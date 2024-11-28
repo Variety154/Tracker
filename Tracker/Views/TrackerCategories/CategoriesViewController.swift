@@ -76,7 +76,8 @@ final class CategoriesViewController: LightStatusBarViewController {
         setupLayout()
         
         //viewModel = TrackerCategoryViewModel()
-        viewModel?.trackerCategoriesBinding = updateTableView
+        viewModel?.trackerCategoriesBinding = {[weak self] categories in
+            self?.updateTableView(categories: categories)}
         viewModel?.fetchTrackerCategories()
     }
     
