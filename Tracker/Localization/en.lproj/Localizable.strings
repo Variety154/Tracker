@@ -1,10 +1,9 @@
-/* 
-  Localizable.strings
-  Tracker
-
-  Created by Alexander Bralnin on 14.11.2024.
-  
-*/
+//
+//  LocalozedStrings.swift
+//  Tracker
+//
+//  Created by Varvara Kiseleva on 02.12.2024.
+//
 // MARK: - Onboarding View Controllers
 "onboarding.first.title" = "Track only what you want";
 "onboarding.second.title" = "Even if it's not liters of water and yoga";
