@@ -11,7 +11,7 @@ final class MainTabBarController: UITabBarController {
     
     private lazy var separatorLine: UIView = {
         let line = UIView()
-        line.backgroundColor = .ysGray
+        line.backgroundColor = AppColors.Fixed.gray
         line.translatesAutoresizingMaskIntoConstraints = false
         return line
     }()
@@ -28,17 +28,17 @@ final class MainTabBarController: UITabBarController {
             separatorLine.topAnchor.constraint(equalTo: tabBar.topAnchor),
             separatorLine.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
             separatorLine.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
-            separatorLine.heightAnchor.constraint(equalToConstant: 1)  // Толщина линии
+            separatorLine.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
     
-    func addTabItems(){
+    func addTabItems() {
         let trackerViewController = UINavigationController(rootViewController: TrackersViewController())
         trackerViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Record"), tag: 0)
         
-        let statisticsViewController = StatisticsViewController()
+        let statisticsViewController = UINavigationController(rootViewController: StatisticsViewController())
         statisticsViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Hare"), tag: 1)
-        statisticsViewController.tabBarItem.title = "Статистика"
+        
         self.viewControllers = [trackerViewController, statisticsViewController]
     }
 }
