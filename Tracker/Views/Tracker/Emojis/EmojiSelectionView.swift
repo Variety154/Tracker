@@ -8,7 +8,7 @@
 import UIKit
 
 final class EmojiSelectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    weak var delegate: NewTrackerDelegateProtocol?
+    weak var delegate: TrackerDelegateProtocol?
     
     private var selectedEmojiIndex: IndexPath?
     
@@ -28,7 +28,7 @@ final class EmojiSelectionView: UIView, UICollectionViewDelegate, UICollectionVi
     
     private lazy var emojiCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = .ysWhite
+        collectionView.backgroundColor = .white
         collectionView.bounces = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self

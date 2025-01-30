@@ -4,7 +4,6 @@
 //
 //  Created by Varvara Kiseleva on 22.11.2024.
 //
-
 import CoreData
 
 enum TrackerDecodingError: Error {
@@ -12,7 +11,7 @@ enum TrackerDecodingError: Error {
 }
 
 final class TrackerStore: BasicStore {
-    weak var delegate: StoreDelegate?
+    var delegate: StoreDelegate?
     
     private var trackerCategoryStore = TrackerCategoryStore()
     private var trackerRecordStore = TrackerRecordStore()

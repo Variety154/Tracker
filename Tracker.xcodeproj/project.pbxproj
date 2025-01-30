@@ -79,7 +79,7 @@
 		1C859CD72CFFA1FF00F702B9 /* StatisticsStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C859CD22CFFA1FF00F702B9 /* StatisticsStoreTest.swift */; };
 		1C859CD82CFFA1FF00F702B9 /* TrackerScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C859CD32CFFA1FF00F702B9 /* TrackerScreenshotTests.swift */; };
 		5D3B3AF5373FF1CF2998E384 /* Pods_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A30C8FDF84A049A49D7A075 /* Pods_TrackerTests.framework */; };
-		72815494BCEA5FC409C1E03C /* Pods_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181826AB2E56A98266F1E642 /* Pods_Tracker.framework */; };
+		6B7FAA7F05B30F18B0DB7D8C /* Pods_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181826AB2E56A98266F1E642 /* Pods_Tracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 
 /* Begin PBXFileReference section */
 		181826AB2E56A98266F1E642 /* Pods_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A7C3541A11903BCBDB9DCE4 /* Pods-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Tracker/Pods-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		1C7676A82CFDE3400094C046 /* TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F151E2CE9BE38001AC738 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8596232CFF415100F702B9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -170,10 +169,12 @@
 		1C859CD02CFFA1FF00F702B9 /* MockTrackerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackerDelegate.swift; sourceTree = "<group>"; };
 		1C859CD22CFFA1FF00F702B9 /* StatisticsStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStoreTest.swift; sourceTree = "<group>"; };
 		1C859CD32CFFA1FF00F702B9 /* TrackerScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerScreenshotTests.swift; sourceTree = "<group>"; };
-		2F30DC82AA4313F8E50FD452 /* Pods-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker.release.xcconfig"; path = "Target Support Files/Pods-Tracker/Pods-Tracker.release.xcconfig"; sourceTree = "<group>"; };
-		80805D0A7E290644B7C9C5DC /* Pods-TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackerTests/Pods-TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1C988F412D05B488009D0640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37300DCB3D80566D74015D63 /* Pods-TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-TrackerTests/Pods-TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		37DD88130AA11F9255EF6045 /* Pods-TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackerTests/Pods-TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A30C8FDF84A049A49D7A075 /* Pods_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC88A1D857345149E2DF3F0E /* Pods-TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-TrackerTests/Pods-TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		AEBF2014E4B469C640D705FB /* Pods-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Tracker/Pods-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		F8FD66D5A1D0A227859BB999 /* Pods-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker.release.xcconfig"; path = "Target Support Files/Pods-Tracker/Pods-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72815494BCEA5FC409C1E03C /* Pods_Tracker.framework in Frameworks */,
+				6B7FAA7F05B30F18B0DB7D8C /* Pods_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +205,7 @@
 				1C7F151F2CE9BE38001AC738 /* Products */,
 				AFDE203FAE78151B49145D34 /* Frameworks */,
 				1C8596232CFF415100F702B9 /* .gitignore */,
-				3EBF9F9AD613F7C8D91D67EC /* Pods */,
+				E2D869356F80E2922B8E27D0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -427,6 +428,7 @@
 				1C859C7F2CFFA1F400F702B9 /* Views */,
 				1C859C802CFFA1F400F702B9 /* AppDelegate.swift */,
 				1C859C812CFFA1F400F702B9 /* Assets.xcassets */,
+				1C988F412D05B488009D0640 /* Info.plist */,
 				1C859C842CFFA1F400F702B9 /* LaunchScreen.storyboard */,
 				1C859C862CFFA1F400F702B9 /* LaunchScreen.strings */,
 				1C859C872CFFA1F400F702B9 /* SceneDelegate.swift */,
@@ -469,17 +471,6 @@
 			path = TrackerTests;
 			sourceTree = "<group>";
 		};
-		3EBF9F9AD613F7C8D91D67EC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1A7C3541A11903BCBDB9DCE4 /* Pods-Tracker.debug.xcconfig */,
-				2F30DC82AA4313F8E50FD452 /* Pods-Tracker.release.xcconfig */,
-				80805D0A7E290644B7C9C5DC /* Pods-TrackerTests.debug.xcconfig */,
-				DC88A1D857345149E2DF3F0E /* Pods-TrackerTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		AFDE203FAE78151B49145D34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +478,17 @@
 				8A30C8FDF84A049A49D7A075 /* Pods_TrackerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2D869356F80E2922B8E27D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEBF2014E4B469C640D705FB /* Pods-Tracker.debug.xcconfig */,
+				F8FD66D5A1D0A227859BB999 /* Pods-Tracker.release.xcconfig */,
+				37DD88130AA11F9255EF6045 /* Pods-TrackerTests.debug.xcconfig */,
+				37300DCB3D80566D74015D63 /* Pods-TrackerTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -791,7 +793,7 @@
 /* Begin XCBuildConfiguration section */
 		1C7676AF2CFDE3400094C046 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80805D0A7E290644B7C9C5DC /* Pods-TrackerTests.debug.xcconfig */;
+			baseConfigurationReference = 37DD88130AA11F9255EF6045 /* Pods-TrackerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -812,7 +814,7 @@
 		};
 		1C7676B02CFDE3400094C046 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC88A1D857345149E2DF3F0E /* Pods-TrackerTests.release.xcconfig */;
+			baseConfigurationReference = 37300DCB3D80566D74015D63 /* Pods-TrackerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -832,7 +834,7 @@
 		};
 		1C7F15322CE9BE3A001AC738 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A7C3541A11903BCBDB9DCE4 /* Pods-Tracker.debug.xcconfig */;
+			baseConfigurationReference = AEBF2014E4B469C640D705FB /* Pods-Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -865,7 +867,7 @@
 		};
 		1C7F15332CE9BE3A001AC738 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F30DC82AA4313F8E50FD452 /* Pods-Tracker.release.xcconfig */;
+			baseConfigurationReference = F8FD66D5A1D0A227859BB999 /* Pods-Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -933,7 +935,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -948,7 +950,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -996,7 +998,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1005,7 +1007,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

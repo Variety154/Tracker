@@ -225,7 +225,7 @@ final class TrackerViewController: BasicViewController {
         scheduleCell.detailTextLabel?.text = tracker.schedule?.shortDescription ?? nil
         selectedEmojiIndex = Emoji.allCases.firstIndex(of: tracker.emoji).map { IndexPath(item: $0, section: 0) }
         selectedColorIndex = TrackerColor.allCases.firstIndex(of: tracker.color).map { IndexPath(item: $0, section: 0) }
-        emojiSelectionView.selectEmoji(at: selectedEmojiIndex)
+//        emojiSelectionView.selectEmoji(at: selectedEmojiIndex)
         colorSelectionView.selectColor(at: selectedColorIndex)
         updateSaveButtonState(isActive: validateTracker())
     }
