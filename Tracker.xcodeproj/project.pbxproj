@@ -37,15 +37,11 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1C7676A92CFDE3400094C046 /* TrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = TrackerTests;
 			sourceTree = "<group>";
 		};
 		1C7F15202CE9BE38001AC738 /* Tracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = Tracker;
 			sourceTree = "<group>";
 		};
