@@ -25,8 +25,8 @@
 /* Begin PBXFileReference section */
 		11ABD2251C639A0E4CF49A3F /* Pods-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Tracker/Pods-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		181826AB2E56A98266F1E642 /* Pods_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C7676A82CFDE3400094C046 /* TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C7F151E2CE9BE38001AC738 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C7676A82CFDE3400094C046 /* TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TrackerTests.xctest; path = "/Users/varvarakiseleva/Downloads/Tracker/build/Debug-iphoneos/Tracker.app/PlugIns/TrackerTests.xctest"; sourceTree = "<absolute>"; };
+		1C7F151E2CE9BE38001AC738 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Tracker.app; path = "/Users/varvarakiseleva/Downloads/Tracker/build/Debug-iphoneos/Tracker.app"; sourceTree = "<absolute>"; };
 		1C8596232CFF415100F702B9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		67E566E3F9EBCD3567E5F968 /* Pods-TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackerTests/Pods-TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A30C8FDF84A049A49D7A075 /* Pods_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,20 +72,10 @@
 			children = (
 				1C7F15202CE9BE38001AC738 /* Tracker */,
 				1C7676A92CFDE3400094C046 /* TrackerTests */,
-				1C7F151F2CE9BE38001AC738 /* Products */,
 				2D2DEEFC9B3BCD03AF91DC4D /* Pods */,
 				AFDE203FAE78151B49145D34 /* Frameworks */,
 				1C8596232CFF415100F702B9 /* .gitignore */,
 			);
-			sourceTree = "<group>";
-		};
-		1C7F151F2CE9BE38001AC738 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1C7F151E2CE9BE38001AC738 /* Tracker.app */,
-				1C7676A82CFDE3400094C046 /* TrackerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		2D2DEEFC9B3BCD03AF91DC4D /* Pods */ = {
@@ -190,7 +180,7 @@
 				1C8595532CFF351100F702B9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 1C7F151F2CE9BE38001AC738 /* Products */;
+			productRefGroup = 1C7F15152CE9BE38001AC738;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
