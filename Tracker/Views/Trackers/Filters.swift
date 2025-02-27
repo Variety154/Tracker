@@ -1,0 +1,43 @@
+//
+//  Filters.swift
+//  Tracker
+//
+//  Created by Varvara Kiseleva on 02.12.2024.
+//
+
+import Foundation
+
+protocol FilterDelegateProtocol {
+    var currentFilter: Filter { get }
+    func didSelectFilter(filter: Filter)
+}
+
+enum Filter: String, CaseIterable {
+    case allTrackers = "filters.all_trackers"
+    case todayTrackers = "filters.today_trackers"
+    case completed = "filters.completed"
+    case notCompleted = "filters.not_completed"
+    
+    var localized: String {
+        return NSLocalizedString(self.rawValue, comment: "")
+    }
+    
+    func makePredicate() -> (Tracker) -> Bool {
+        switch self {
+        case .allTrackers:
+            return { _ in true }
+            
+        case .todayTrackers:
+            return { _ in true }
+                        
+        case .completed:
+            return { tracker in tracker.isComplete }
+            
+        case .notCompleted:
+            return { tracker in !tracker.isComplete }
+        }
+    }
+}
+
+
+

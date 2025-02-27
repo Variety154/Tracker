@@ -16,13 +16,13 @@ enum EventType: Int {
     var description: String {
         switch self {
         case .habit:
-            return LocalizedStrings.Tracker.habitTitle
+            return LocalizedString.Tracker.habitTitle
         case .oneOff:
-            return LocalizedStrings.Tracker.oneOffTitle
+            return LocalizedString.Tracker.oneOffTitle
         case .updateOneOff:
-            return LocalizedStrings.Tracker.oneOffUpdateTitle
+            return LocalizedString.Tracker.oneOffUpdateTitle
         case .updateHabit:
-            return LocalizedStrings.Tracker.habitUpdateTitle
+            return LocalizedString.Tracker.habitUpdateTitle
         }
     }
     
@@ -75,7 +75,7 @@ final class TrackerViewController: BasicViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = eventType.description
-        label.font = Fonts.titleMediumFont
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -83,7 +83,7 @@ final class TrackerViewController: BasicViewController {
     
     private lazy var counterLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.largeLabelFont
+        label.font = Font.largeLabelFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -91,10 +91,10 @@ final class TrackerViewController: BasicViewController {
     
     private lazy var trackerNameTextField: PaddedTextField = {
         let textField = PaddedTextField()
-        textField.placeholder = LocalizedStrings.Tracker.placeholderName
-        textField.layer.cornerRadius = Constants.radius
+        textField.placeholder = LocalizedString.Tracker.placeholderName
+        textField.layer.cornerRadius = Constant.radius
         textField.delegate = self
-        textField.backgroundColor = AppColors.Dynamic.background
+        textField.backgroundColor = AppColor.Dynamic.background
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.addTarget(self, action: #selector(trackerNameTextFieldChanged), for: .editingChanged)
         return textField
@@ -102,10 +102,10 @@ final class TrackerViewController: BasicViewController {
     
     private lazy var tableView: UITableView  = {
         let table = UITableView()
-        table.backgroundColor = AppColors.Dynamic.white
+        table.backgroundColor = AppColor.Dynamic.white
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        table.layer.cornerRadius = Constants.radius
-        table.separatorInset = Insets.separatorInset
+        table.layer.cornerRadius = Constant.radius
+        table.separatorInset = Inset.separatorInset
         table.isScrollEnabled = false
         table.delegate = self
         table.dataSource = self
@@ -127,13 +127,13 @@ final class TrackerViewController: BasicViewController {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.Tracker.cancelButton, for: .normal)
+        button.setTitle(LocalizedString.Tracker.cancelButton, for: .normal)
         button.setTitleColor(.red, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.layer.cornerRadius = Constants.radius
+        button.titleLabel?.font = Font.titleMediumFont
+        button.layer.cornerRadius = Constant.radius
         button.layer.borderWidth = 1
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.borderColor =  AppColors.Fixed.red.cgColor
+        button.layer.borderColor =  AppColor.Fixed.red.cgColor
         button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -141,14 +141,14 @@ final class TrackerViewController: BasicViewController {
     private lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
         if eventType.isNew {
-            button.setTitle(LocalizedStrings.Tracker.createButton, for: .normal)
+            button.setTitle(LocalizedString.Tracker.createButton, for: .normal)
         } else {
-            button.setTitle(LocalizedStrings.Tracker.saveButton, for: .normal)
+            button.setTitle(LocalizedString.Tracker.saveButton, for: .normal)
         }
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Dynamic.white, for: .normal)
-        button.backgroundColor = AppColors.Fixed.gray
-        button.layer.cornerRadius = Constants.radius
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Dynamic.white, for: .normal)
+        button.backgroundColor = AppColor.Fixed.gray
+        button.layer.cornerRadius = Constant.radius
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         return button
@@ -165,26 +165,26 @@ final class TrackerViewController: BasicViewController {
     
     private let categoryCell: UITableViewCell = {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = LocalizedStrings.Tracker.categoryTitle
+        cell.textLabel?.text = LocalizedString.Tracker.categoryTitle
         cell.accessoryType = .disclosureIndicator
-        cell.layoutMargins = Insets.cellInsets
-        cell.backgroundColor = AppColors.Dynamic.background
-        cell.textLabel?.font = Fonts.textFieldFont
-        cell.detailTextLabel?.textColor = AppColors.Fixed.gray
-        cell.textLabel?.textColor = AppColors.Dynamic.black
+        cell.layoutMargins = Inset.cellInsets
+        cell.backgroundColor = AppColor.Dynamic.background
+        cell.textLabel?.font = Font.textFieldFont
+        cell.detailTextLabel?.textColor = AppColor.Fixed.gray
+        cell.textLabel?.textColor = AppColor.Dynamic.black
         
         return cell
     }()
     
     private let scheduleCell: UITableViewCell = {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = LocalizedStrings.Tracker.scheduleTitle
+        cell.textLabel?.text = LocalizedString.Tracker.scheduleTitle
         cell.accessoryType = .disclosureIndicator
-        cell.layoutMargins = Insets.cellInsets
-        cell.backgroundColor = AppColors.Dynamic.background
-        cell.textLabel?.font = Fonts.textFieldFont
-        cell.detailTextLabel?.textColor = AppColors.Fixed.gray
-        cell.textLabel?.textColor = AppColors.Dynamic.black
+        cell.layoutMargins = Inset.cellInsets
+        cell.backgroundColor = AppColor.Dynamic.background
+        cell.textLabel?.font = Font.textFieldFont
+        cell.detailTextLabel?.textColor = AppColor.Fixed.gray
+        cell.textLabel?.textColor = AppColor.Dynamic.black
         
         return cell
     }()
@@ -217,7 +217,7 @@ final class TrackerViewController: BasicViewController {
     //MARK: - Public Methods
     func configure(with tracker: Tracker, category: String, count: Int) {
         currentTracker = tracker
-        counterLabel.text = LocalizedStrings.TrackerCell.formatDaysText(days: count)
+        counterLabel.text = LocalizedString.TrackerCell.formatDaysText(days: count)
         trackerNameTextField.text = tracker.name
         selectedCategory = category
         categoryCell.detailTextLabel?.text = category
@@ -225,13 +225,13 @@ final class TrackerViewController: BasicViewController {
         scheduleCell.detailTextLabel?.text = tracker.schedule?.shortDescription ?? nil
         selectedEmojiIndex = Emoji.allCases.firstIndex(of: tracker.emoji).map { IndexPath(item: $0, section: 0) }
         selectedColorIndex = TrackerColor.allCases.firstIndex(of: tracker.color).map { IndexPath(item: $0, section: 0) }
-        emojiSelectionView.selectEmoji(at: selectedEmojiIndex)
+
         colorSelectionView.selectColor(at: selectedColorIndex)
         updateSaveButtonState(isActive: validateTracker())
     }
     
     private func setupLayout(){
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         
         view.addSubview(scrollView)
         contentView.addSubview(titleLabel)
@@ -286,8 +286,8 @@ final class TrackerViewController: BasicViewController {
             trackerNameTextField.heightAnchor.constraint(equalToConstant: 75),
             
             tableView.topAnchor.constraint(equalTo: trackerNameTextField.bottomAnchor, constant: 24),
-            tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Insets.leading),
-            tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Insets.trailing),
+            tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Inset.leading),
+            tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Inset.trailing),
             tableView.heightAnchor.constraint(equalToConstant: CGFloat(eventType.numberOfCells * 75)),
             
             emojiSelectionView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
@@ -325,10 +325,10 @@ final class TrackerViewController: BasicViewController {
     
     private func updateSaveButtonState(isActive: Bool) {
         if isActive {
-            saveButton.backgroundColor = AppColors.Dynamic.black
+            saveButton.backgroundColor = AppColor.Dynamic.black
             saveButton.isEnabled = true
         } else {
-            saveButton.backgroundColor = AppColors.Fixed.gray
+            saveButton.backgroundColor = AppColor.Fixed.gray
             saveButton.isEnabled = false
         }
     }
@@ -432,7 +432,7 @@ extension TrackerViewController: UITableViewDelegate {
         if indexPath.row == eventType.numberOfCells - 1 {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tableView.bounds.width)
         } else {
-            cell.separatorInset = Insets.separatorInset
+            cell.separatorInset = Inset.separatorInset
         }
     }
 }
@@ -505,7 +505,7 @@ extension TrackerViewController: UITextFieldDelegate{
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         let length = (updatedText as NSString).length
-        return length <= Constants.trackerNameMaxLength
+        return length <= Constant.trackerNameMaxLength
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

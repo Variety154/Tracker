@@ -38,7 +38,7 @@ struct WeekDays: OptionSet, Hashable {
     
     var description: String {
         if self == .Daily {
-            return LocalizedStrings.WeekDays.allDays
+            return LocalizedString.WeekDays.allDays
         } else {
             let selectedDays = WeekDays.allDays.filter { self.contains($0) }
             let dayNames = selectedDays.map { $0.singleDayDescription }
@@ -48,7 +48,7 @@ struct WeekDays: OptionSet, Hashable {
     
     var shortDescription: String {
         if self == .Daily {
-            return LocalizedStrings.WeekDays.allDays
+            return LocalizedString.WeekDays.allDays
         } else {
             let selectedDays = WeekDays.allDays.filter { self.contains($0) }
             let dayNames = selectedDays.map { $0.singleDayShortDescription }
@@ -59,19 +59,19 @@ struct WeekDays: OptionSet, Hashable {
     private var singleDayDescription: String {
         switch self {
         case .Monday:
-            return LocalizedStrings.WeekDays.monday
+            return LocalizedString.WeekDays.monday
         case .Tuesday:
-            return LocalizedStrings.WeekDays.tuesday
+            return LocalizedString.WeekDays.tuesday
         case .Wednesday:
-            return LocalizedStrings.WeekDays.wednesday
+            return LocalizedString.WeekDays.wednesday
         case .Thursday:
-            return LocalizedStrings.WeekDays.thursday
+            return LocalizedString.WeekDays.thursday
         case .Friday:
-            return LocalizedStrings.WeekDays.friday
+            return LocalizedString.WeekDays.friday
         case .Saturday:
-            return LocalizedStrings.WeekDays.saturday
+            return LocalizedString.WeekDays.saturday
         case .Sunday:
-            return LocalizedStrings.WeekDays.sunday
+            return LocalizedString.WeekDays.sunday
         default:
             return "Unknown Day"
         }
@@ -80,19 +80,19 @@ struct WeekDays: OptionSet, Hashable {
     private var singleDayShortDescription: String {
         switch self {
         case .Monday:
-            return LocalizedStrings.WeekDays.shortMonday
+            return LocalizedString.WeekDays.shortMonday
         case .Tuesday:
-            return LocalizedStrings.WeekDays.shortTuesday
+            return LocalizedString.WeekDays.shortTuesday
         case .Wednesday:
-            return LocalizedStrings.WeekDays.shortWednesday
+            return LocalizedString.WeekDays.shortWednesday
         case .Thursday:
-            return LocalizedStrings.WeekDays.shortThursday
+            return LocalizedString.WeekDays.shortThursday
         case .Friday:
-            return LocalizedStrings.WeekDays.shortFriday
+            return LocalizedString.WeekDays.shortFriday
         case .Saturday:
-            return LocalizedStrings.WeekDays.shortSaturday
+            return LocalizedString.WeekDays.shortSaturday
         case .Sunday:
-            return LocalizedStrings.WeekDays.shortSunday
+            return LocalizedString.WeekDays.shortSunday
         default:
             return "?"
         }

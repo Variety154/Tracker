@@ -17,10 +17,10 @@ final class StatisticsViewModel {
     func getStatisticsItems() -> [StatisticsItem] {
         self.statisticsStore.loadData()
         let items = [
-            (value: statisticsStore.countBestPeriod(), description: LocalizedStrings.Statistics.bestPeriod),
-            (value: statisticsStore.countPerfectDays(), description: LocalizedStrings.Statistics.perfectDays),
-            (value: statisticsStore.countCompletedTrackers(), description: LocalizedStrings.Statistics.trackersCompleted),
-            (value: statisticsStore.getAverageValue(), description: LocalizedStrings.Statistics.averageValue)
+            (value: statisticsStore.countBestPeriod(), description: LocalizedString.Statistic.bestPeriod),
+            (value: statisticsStore.countPerfectDays(), description: LocalizedString.Statistic.perfectDays),
+            (value: statisticsStore.countCompletedTrackers(), description: LocalizedString.Statistic.trackersCompleted),
+            (value: statisticsStore.getAverageValue(), description: LocalizedString.Statistic.averageValue)
         ]
         
         let count = items

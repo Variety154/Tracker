@@ -8,7 +8,7 @@
 import UIKit
 
 final class EmojiSelectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    weak var delegate: NewTrackerDelegateProtocol?
+    weak var delegate: TrackerDelegateProtocol?
     
     private var selectedEmojiIndex: IndexPath?
     
@@ -21,14 +21,14 @@ final class EmojiSelectionView: UIView, UICollectionViewDelegate, UICollectionVi
     private lazy var emojiLabel: UILabel = {
         let label = UILabel()
         label.text = "Emoji"
-        label.font = Fonts.sectionHeaderFont
+        label.font = Font.sectionHeaderFont
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var emojiCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = .ysWhite
+        collectionView.backgroundColor = AppColor.Dynamic.white
         collectionView.bounces = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -102,7 +102,7 @@ final class EmojiSelectionView: UIView, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: Insets.top, left: params.leftInset, bottom: Insets.bottom, right: params.rightInset)
+        UIEdgeInsets(top: Inset.top, left: params.leftInset, bottom: Inset.bottom, right: params.rightInset)
     }
     
     func collectionView(_ collectionView: UICollectionView,

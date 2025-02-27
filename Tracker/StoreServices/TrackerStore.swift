@@ -4,7 +4,6 @@
 //
 //  Created by Varvara Kiseleva on 22.11.2024.
 //
-
 import CoreData
 
 enum TrackerDecodingError: Error {
@@ -12,7 +11,7 @@ enum TrackerDecodingError: Error {
 }
 
 final class TrackerStore: BasicStore {
-    weak var delegate: StoreDelegate?
+    var delegate: StoreDelegate?
     
     private var trackerCategoryStore = TrackerCategoryStore()
     private var trackerRecordStore = TrackerRecordStore()
@@ -28,7 +27,7 @@ final class TrackerStore: BasicStore {
             if let pinnedObjects = pinnedController.fetchedObjects {
                 let pinnedTrackers: [Tracker] = pinnedObjects.compactMap { try? from($0, for: date) }
                 if !pinnedTrackers.isEmpty {
-                    let pinnedCategory = TrackerCategory(title: LocalizedStrings.Trackers.pinnedCategoryText, trackers: pinnedTrackers)
+                    let pinnedCategory = TrackerCategory(title: LocalizedString.Trackers.pinnedCategoryText, trackers: pinnedTrackers)
                     trackerCategories.append(pinnedCategory)
                 }
             }

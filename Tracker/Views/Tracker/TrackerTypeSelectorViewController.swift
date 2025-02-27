@@ -12,8 +12,8 @@ final class TrackerTypeSelectorViewController: BasicViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedStrings.TrackerCreation.title
-        label.font = Fonts.titleMediumFont
+        label.text = LocalizedString.TrackerCreation.title
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -21,11 +21,11 @@ final class TrackerTypeSelectorViewController: BasicViewController {
     
     private lazy var habitButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.TrackerCreation.habitButton, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Dynamic.white, for: .normal)
-        button.backgroundColor = AppColors.Dynamic.black
-        button.layer.cornerRadius = Constants.radius
+        button.setTitle(LocalizedString.TrackerCreation.habitButton, for: .normal)
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Dynamic.white, for: .normal)
+        button.backgroundColor = AppColor.Dynamic.black
+        button.layer.cornerRadius = Constant.radius
         button.addTarget(self, action: #selector(habitButtonTapped(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -33,11 +33,11 @@ final class TrackerTypeSelectorViewController: BasicViewController {
     
     private lazy var irregularEventButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.TrackerCreation.irregularEventButton, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Dynamic.white, for: .normal)
-        button.backgroundColor = AppColors.Dynamic.black
-        button.layer.cornerRadius = Constants.radius
+        button.setTitle(LocalizedString.TrackerCreation.irregularEventButton, for: .normal)
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Dynamic.white, for: .normal)
+        button.backgroundColor = AppColor.Dynamic.black
+        button.layer.cornerRadius = Constant.radius
         button.addTarget(self, action: #selector(irregularEventButtonTapped(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -59,7 +59,7 @@ final class TrackerTypeSelectorViewController: BasicViewController {
     }
     
     private func setupLayout(){
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         
         view.addSubview(titleLabel)
         view.addSubview(titleLabel)
@@ -69,8 +69,8 @@ final class TrackerTypeSelectorViewController: BasicViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             titleLabel.heightAnchor.constraint(equalToConstant: 22),
             
             habitButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -58),
