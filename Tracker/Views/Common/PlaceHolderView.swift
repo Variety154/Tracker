@@ -21,7 +21,7 @@ final class PlaceHolderView: UIView {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = Fonts.labelFont
+        label.font = Font.labelFont
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,8 +60,8 @@ final class PlaceHolderView: UIView {
             
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Insets.leading),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Insets.trailing),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Inset.leading),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Inset.trailing),
             label.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

@@ -19,15 +19,15 @@ final class ColorSelectionView: UIView, UICollectionViewDelegate, UICollectionVi
 
     private lazy var colorLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedStrings.Tracker.colorText
-        label.font = Fonts.sectionHeaderFont
+        label.text = LocalizedString.Tracker.colorText
+        label.font = Font.sectionHeaderFont
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var colorCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = AppColors.Dynamic.white
+        collectionView.backgroundColor = AppColor.Dynamic.white
         collectionView.bounces = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -115,7 +115,7 @@ final class ColorSelectionView: UIView, UICollectionViewDelegate, UICollectionVi
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        UIEdgeInsets(top: Insets.top, left: params.leftInset, bottom: Insets.bottom, right: params.rightInset)
+        UIEdgeInsets(top: Inset.top, left: params.leftInset, bottom: Inset.bottom, right: params.rightInset)
     }
     
     func collectionView(_ collectionView: UICollectionView,

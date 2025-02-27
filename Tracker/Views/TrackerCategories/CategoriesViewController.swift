@@ -31,8 +31,8 @@ final class CategoriesViewController: BasicViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedStrings.Categories.title
-        label.font = Fonts.titleMediumFont
+        label.text = LocalizedString.Category.title
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -40,9 +40,9 @@ final class CategoriesViewController: BasicViewController {
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = AppColors.Dynamic.white
+        table.backgroundColor = AppColor.Dynamic.white
         table.register(SelectionTableViewCell.self, forCellReuseIdentifier: "cell")
-        table.layer.cornerRadius = Constants.radius
+        table.layer.cornerRadius = Constant.radius
         table.isScrollEnabled = true
         table.delegate = self
         table.dataSource = self
@@ -53,11 +53,11 @@ final class CategoriesViewController: BasicViewController {
     
     private lazy var addNewCategory: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.Categories.addButton, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Dynamic.white, for: .normal)
-        button.backgroundColor = AppColors.Dynamic.black
-        button.layer.cornerRadius = Constants.radius
+        button.setTitle(LocalizedString.Category.addButton, for: .normal)
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Dynamic.white, for: .normal)
+        button.backgroundColor = AppColor.Dynamic.black
+        button.layer.cornerRadius = Constant.radius
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(addCategoryButtonTapped), for: .touchUpInside)
         return button
@@ -66,7 +66,7 @@ final class CategoriesViewController: BasicViewController {
     private let placeHolderView: PlaceHolderView = {
         let view = PlaceHolderView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setText(text: LocalizedStrings.Categories.placeholderText)
+        view.setText(text: LocalizedString.Category.placeholderText)
         view.isHidden = true
         return view
     }()
@@ -74,7 +74,7 @@ final class CategoriesViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         setupLayout()
         
         viewModel?.trackerCategoriesBinding = updateTableView
@@ -105,12 +105,12 @@ final class CategoriesViewController: BasicViewController {
             
             placeHolderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             placeHolderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             tableView.bottomAnchor.constraint(equalTo: addNewCategory.topAnchor, constant: -24)
         ])
     }
@@ -151,7 +151,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             cell.layer.mask = nil
-            cell.separatorInset = Insets.separatorInset
+            cell.separatorInset = Inset.separatorInset
         }
     }
     
@@ -166,7 +166,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.configure(text: title,
                        isSelected: title == selectedCategory)
-        cell.layoutMargins = Insets.cellInsets
+        cell.layoutMargins = Inset.cellInsets
         
         return cell
     }

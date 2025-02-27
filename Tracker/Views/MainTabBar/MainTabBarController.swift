@@ -11,7 +11,7 @@ final class MainTabBarController: UITabBarController {
     
     private lazy var separatorLine: UIView = {
         let line = UIView()
-        line.backgroundColor = AppColors.Fixed.gray
+        line.backgroundColor = AppColor.Fixed.gray
         line.translatesAutoresizingMaskIntoConstraints = false
         return line
     }()

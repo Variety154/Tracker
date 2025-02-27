@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum AppColors {
+enum AppColor {
     
     enum Dynamic {
         static let black = UIColor { traitCollection in

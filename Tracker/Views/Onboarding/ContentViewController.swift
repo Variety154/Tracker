@@ -27,7 +27,7 @@ final class ContentViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.font = Fonts.titleLargeFont
+        label.font = Font.titleLargeFont
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -37,11 +37,11 @@ final class ContentViewController: UIViewController {
     
     private lazy var startButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.Onboarding.buttonText, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Fixed.white, for: .normal)
-        button.backgroundColor = AppColors.Fixed.black
-        button.layer.cornerRadius = Constants.radius
+        button.setTitle(LocalizedString.Onboarding.buttonText, for: .normal)
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Fixed.white, for: .normal)
+        button.backgroundColor = AppColor.Fixed.black
+        button.layer.cornerRadius = Constant.radius
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -88,8 +88,8 @@ final class ContentViewController: UIViewController {
             label.widthAnchor.constraint(equalToConstant: 76),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 64),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             
             startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

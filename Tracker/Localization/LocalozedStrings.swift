@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LocalizedStrings {
+enum LocalizedString {
     enum Onboarding {
         static let firstTitle = NSLocalizedString("onboarding.first.title", comment: "Title for the first onboarding screen")
         static let secondTitle = NSLocalizedString("onboarding.second.title", comment: "Title for the second onboarding screen")
@@ -37,7 +37,7 @@ enum LocalizedStrings {
     
     enum TrackerCell {
         static func formatDaysText(days: Int) -> String {
-            return String.localizedStringWithFormat(
+            String.localizedStringWithFormat(
                 NSLocalizedString("numberOfDays", comment: "Number of days"),
                 days
             )
@@ -73,7 +73,7 @@ enum LocalizedStrings {
         static let colorText = NSLocalizedString("tracker.color.text", comment: "Title for color selection collection view")
     }
     
-    enum Categories {
+    enum Category {
         static let title = NSLocalizedString("categories.title", comment: "Title for the categories view")
         static let addButton = NSLocalizedString("categories.button.add", comment: "Add category button text")
         static let placeholderText = NSLocalizedString("categories.placeholder.text", comment: "Placeholder text when no categories are available")
@@ -85,7 +85,7 @@ enum LocalizedStrings {
         static let doneButton = NSLocalizedString("new_category.button.done", comment: "Text for done button")
     }
     
-    enum Statistics {
+    enum Statistic {
         static let title = NSLocalizedString("statistics.title", comment: "Title for statistics view")
         static let placeholderText = NSLocalizedString("statistics.placeholder.text", comment: "Text for placeholder")
         static let bestPeriod = NSLocalizedString("statistics.bestPeriod", comment: "Best period")

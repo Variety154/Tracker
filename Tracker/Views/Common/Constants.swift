@@ -7,13 +7,13 @@
 
 import UIKit
 
-enum Constants {
+enum Constant {
     static let radius = CGFloat(16)
     static let smallRadius = CGFloat(8)
     static let trackerNameMaxLength = 38
 }
 
-enum Insets {
+enum Inset {
     static let leading = CGFloat(16)
     static let trailing = CGFloat(-16)
     static let top = CGFloat(24)
@@ -22,7 +22,7 @@ enum Insets {
     static let separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 }
 
-enum Fonts {
+enum Font {
     static let titleMediumFont = UIFont.systemFont(ofSize: 16, weight: .medium)
     static let titleLargeFont = UIFont.systemFont(ofSize: 34, weight: .bold)
     static let labelFont = UIFont.systemFont(ofSize: 12, weight: .medium)

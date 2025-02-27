@@ -25,14 +25,14 @@ final class PageViewController: UIPageViewController {
     private func createPages() -> [ContentViewController] {
         let firstPage = ContentViewController()
         firstPage.configure(backgroundImageName: "1",
-                            labelText: LocalizedStrings.Onboarding.firstTitle,
+                            labelText: LocalizedString.Onboarding.firstTitle,
                             currentPage: 0,
                             numberOfPages: 2)
         firstPage.delegate = self
         
         let secondPage = ContentViewController()
         secondPage.configure(backgroundImageName: "2",
-                             labelText: LocalizedStrings.Onboarding.secondTitle,
+                             labelText: LocalizedString.Onboarding.secondTitle,
                              currentPage: 1,
                              numberOfPages: 2)
         secondPage.delegate = self

@@ -12,13 +12,13 @@ final class TrackersViewController: BasicViewController {
     private(set) var collectionViewModel: TrackerCollectionViewModelProtocol?
     private(set) var trackerRecordStore: TrackerRecordStore?
     private(set) var params: GeometricParams = GeometricParams(cellCount: 2,
-                                                               leftInset: Insets.leading,
-                                                               rightInset: Insets.leading,
+                                                               leftInset: Inset.leading,
+                                                               rightInset: Inset.leading,
                                                                cellSpacing: 10)
     
     private(set) var selectedDate = Date().startOfDay()
     private(set) var isSearchModeOn = false
-    private(set) var currentFilter: Filters = .allTrackers
+    private(set) var currentFilter: Filter = .allTrackers
     
     //MARK: - UI components
     private lazy var plusButton: UIButton = {
@@ -26,7 +26,7 @@ final class TrackersViewController: BasicViewController {
         if let image = UIImage(systemName: "plus") {
             let config = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold)
             let resizedImage = image.withConfiguration(config)
-            button.setImage(resizedImage.withTintColor(AppColors.Dynamic.black, renderingMode: .alwaysOriginal), for: .normal)
+            button.setImage(resizedImage.withTintColor(AppColor.Dynamic.black, renderingMode: .alwaysOriginal), for: .normal)
         }
         
         button.accessibilityIdentifier = "plusButton"
@@ -37,10 +37,10 @@ final class TrackersViewController: BasicViewController {
     
     private lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
-        picker.backgroundColor = AppColors.Fixed.cardBackground
-        picker.tintColor = AppColors.Fixed.black
+        picker.backgroundColor = AppColor.Fixed.cardBackground
+        picker.tintColor = AppColor.Fixed.black
         picker.overrideUserInterfaceStyle = .light
-        picker.layer.cornerRadius = Constants.smallRadius
+        picker.layer.cornerRadius = Constant.smallRadius
         picker.layer.masksToBounds = true
         picker.datePickerMode = .date
         picker.preferredDatePickerStyle = .compact
@@ -62,7 +62,7 @@ final class TrackersViewController: BasicViewController {
     
     private let placeHolderView: PlaceHolderView = {
         let view = PlaceHolderView()
-        view.setText(text: LocalizedStrings.Trackers.placeholderText)
+        view.setText(text: LocalizedString.Trackers.placeholderText)
         view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -71,7 +71,7 @@ final class TrackersViewController: BasicViewController {
     
     private let searchPlaceHolderView: PlaceHolderView = {
         let view = PlaceHolderView()
-        view.setText(text: LocalizedStrings.Trackers.searchPlaceHolderText)
+        view.setText(text: LocalizedString.Trackers.searchPlaceHolderText)
         view.setImage(name: "Empty")
         view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +83,7 @@ final class TrackersViewController: BasicViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = AppColors.Dynamic.white
+        collectionView.backgroundColor = AppColor.Dynamic.white
         collectionView.register(UICollectionReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "header")
@@ -94,11 +94,11 @@ final class TrackersViewController: BasicViewController {
     
     private lazy var filterButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.Trackers.filterButtonText, for: .normal)
+        button.setTitle(LocalizedString.Trackers.filterButtonText, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.Fixed.blue
-        button.titleLabel?.font = Fonts.textFieldFont
-        button.layer.cornerRadius = Constants.radius
+        button.backgroundColor = AppColor.Fixed.blue
+        button.titleLabel?.font = Font.textFieldFont
+        button.layer.cornerRadius = Constant.radius
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
@@ -124,16 +124,16 @@ final class TrackersViewController: BasicViewController {
     
     //MARK: - View Layout methods
     private func setupLayout(){
-        self.title = LocalizedStrings.Trackers.title
+        self.title = LocalizedString.Trackers.title
         definesPresentationContext = true
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: Fonts.titleLargeFont
+            NSAttributedString.Key.font: Font.titleLargeFont
         ]
         navigationItem.largeTitleDisplayMode = .always
         
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         
         view.addSubview(datePicker)
         view.addSubview(plusButton)
@@ -161,13 +161,13 @@ final class TrackersViewController: BasicViewController {
             
             placeHolderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             placeHolderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             
             searchPlaceHolderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchPlaceHolderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            searchPlaceHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            searchPlaceHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            searchPlaceHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            searchPlaceHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             
             filterButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             filterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -283,7 +283,7 @@ extension TrackersViewController: UISearchBarDelegate {
 }
 
 extension TrackersViewController: FilterDelegateProtocol {
-    func didSelectFilter(filter: Filters) {
+    func didSelectFilter(filter: Filter) {
         self.currentFilter = filter
         if self.currentFilter == .todayTrackers {
             selectedDate = Date().startOfDay()

@@ -59,7 +59,7 @@ extension TrackersViewController {
         }
         
         
-        let pinMessage = tracker.isPinned ? LocalizedStrings.Trackers.ContextMenu.unpin : LocalizedStrings.Trackers.ContextMenu.pin
+        let pinMessage = tracker.isPinned ? LocalizedString.Trackers.ContextMenu.unpin : LocalizedString.Trackers.ContextMenu.pin
         
         let pinAction = UIAction(
             title: pinMessage) { _ in
@@ -67,11 +67,11 @@ extension TrackersViewController {
             }
         
         let editAction = UIAction(
-            title: LocalizedStrings.Trackers.ContextMenu.edit) { _ in
+            title: LocalizedString.Trackers.ContextMenu.edit) { _ in
                 self.editItem(at: indexPath)
             }
         
-        let deleteAction = UIAction(title: LocalizedStrings.Trackers.ContextMenu.delete,
+        let deleteAction = UIAction(title: LocalizedString.Trackers.ContextMenu.delete,
                                     attributes: .destructive) { _ in
             self.deleteItem(at: indexPath)
         }
@@ -125,13 +125,13 @@ extension TrackersViewController {
     
     private func showDeleteAlert(for id: UUID, onDelete: @escaping (UUID) -> Void) {
         let alertController = UIAlertController(
-            title: LocalizedStrings.Trackers.DeleteAlert.title,
+            title: LocalizedString.Trackers.DeleteAlert.title,
             message: nil,
             preferredStyle: .actionSheet
         )
         
         let deleteAction = UIAlertAction(
-            title: LocalizedStrings.Trackers.DeleteAlert.actionDelete,
+            title: LocalizedString.Trackers.DeleteAlert.actionDelete,
             style: .destructive
         ) { _ in
             Log.info(message: "reporting delete event")
@@ -140,7 +140,7 @@ extension TrackersViewController {
         }
         
         let cancelAction = UIAlertAction(
-            title: LocalizedStrings.Trackers.DeleteAlert.actionCancel,
+            title: LocalizedString.Trackers.DeleteAlert.actionCancel,
             style: .cancel,
             handler: nil
         )

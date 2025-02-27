@@ -12,8 +12,8 @@ final class NewCategoryViewController: BasicViewController {
         
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedStrings.NewCategory.title
-        label.font = Fonts.titleMediumFont
+        label.text = LocalizedString.NewCategory.title
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -21,11 +21,11 @@ final class NewCategoryViewController: BasicViewController {
     
     private lazy var categoryTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = LocalizedStrings.NewCategory.placeholder
-        textField.font = Fonts.textFieldFont
+        textField.placeholder = LocalizedString.NewCategory.placeholder
+        textField.font = Font.textFieldFont
         textField.textAlignment = .left
-        textField.backgroundColor = AppColors.Dynamic.background
-        textField.layer.cornerRadius = Constants.radius
+        textField.backgroundColor = AppColor.Dynamic.background
+        textField.layer.cornerRadius = Constant.radius
         textField.layer.masksToBounds = true
         textField.delegate = self
         textField.addTarget(self, action: #selector(categoryTextFieldChanged), for: .editingChanged)
@@ -36,12 +36,12 @@ final class NewCategoryViewController: BasicViewController {
     
     private lazy var createButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.NewCategory.doneButton, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Dynamic.white, for: .normal)
-        button.backgroundColor = AppColors.Fixed.gray
+        button.setTitle(LocalizedString.NewCategory.doneButton, for: .normal)
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Dynamic.white, for: .normal)
+        button.backgroundColor = AppColor.Fixed.gray
         button.isEnabled = false
-        button.layer.cornerRadius = Constants.radius
+        button.layer.cornerRadius = Constant.radius
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(createButtonTapped), for: .touchUpInside)
         return button
@@ -60,7 +60,7 @@ final class NewCategoryViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         setupLayout()
     }
     
@@ -92,12 +92,12 @@ final class NewCategoryViewController: BasicViewController {
        
         if isEmpty {
             createButton.isEnabled = false
-            createButton.backgroundColor = AppColors.Fixed.gray
+            createButton.backgroundColor = AppColor.Fixed.gray
             return
         }
         
         createButton.isEnabled = true
-        createButton.backgroundColor = AppColors.Dynamic.black
+        createButton.backgroundColor = AppColor.Dynamic.black
     }
     
     @IBAction

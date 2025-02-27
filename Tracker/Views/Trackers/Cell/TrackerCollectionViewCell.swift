@@ -21,7 +21,7 @@ final class TrackerCollectionViewCell: UICollectionViewCell {
     
     private lazy var daysLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.labelFont
+        label.font = Font.labelFont
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -136,7 +136,7 @@ final class TrackerCollectionViewCell: UICollectionViewCell {
         count = dataProvider.count(by: trackerRecord.trackerId)
         
         setupPlusButton(isDone: isDone, color: tracker.color.uiColor)
-        daysLabel.text = LocalizedStrings.TrackerCell.formatDaysText(days: count)
+        daysLabel.text = LocalizedString.TrackerCell.formatDaysText(days: count)
     }
     
     @IBAction

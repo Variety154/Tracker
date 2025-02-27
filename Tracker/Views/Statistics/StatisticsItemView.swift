@@ -11,16 +11,16 @@ final class StatisticsItemView: GradientBorderView {
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.titleLargeFont
-        label.textColor = AppColors.Dynamic.black
+        label.font = Font.titleLargeFont
+        label.textColor = AppColor.Dynamic.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.labelFont
-        label.textColor = AppColors.Dynamic.black
+        label.font = Font.labelFont
+        label.textColor = AppColor.Dynamic.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -42,7 +42,7 @@ final class StatisticsItemView: GradientBorderView {
         addSubview(descriptionLabel)
         
         self.borderWidth = 1.0
-        self.cornerRadius = Constants.radius
+        self.cornerRadius = Constant.radius
         self.gradientColors = [
             UIColor(hex: "#007BFA"),
             UIColor(hex: "#46E69D"),

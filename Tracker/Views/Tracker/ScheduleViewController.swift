@@ -14,8 +14,8 @@ final class ScheduleViewController: BasicViewController {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedStrings.Schedule.title
-        label.font = Fonts.titleMediumFont
+        label.text = LocalizedString.Schedule.title
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -23,9 +23,9 @@ final class ScheduleViewController: BasicViewController {
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = AppColors.Dynamic.white
+        table.backgroundColor = AppColor.Dynamic.white
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        table.layer.cornerRadius = Constants.radius
+        table.layer.cornerRadius = Constant.radius
         table.isScrollEnabled = false
         table.delegate = self
         table.dataSource = self
@@ -36,11 +36,11 @@ final class ScheduleViewController: BasicViewController {
 
     private lazy var doneButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LocalizedStrings.Schedule.buttonText, for: .normal)
-        button.titleLabel?.font = Fonts.titleMediumFont
-        button.setTitleColor(AppColors.Dynamic.white, for: .normal)
-        button.backgroundColor = AppColors.Dynamic.black
-        button.layer.cornerRadius = Constants.radius
+        button.setTitle(LocalizedString.Schedule.buttonText, for: .normal)
+        button.titleLabel?.font = Font.titleMediumFont
+        button.setTitleColor(AppColor.Dynamic.white, for: .normal)
+        button.backgroundColor = AppColor.Dynamic.black
+        button.layer.cornerRadius = Constant.radius
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
         return button
@@ -49,7 +49,7 @@ final class ScheduleViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         setupLayout()
     }
     
@@ -69,8 +69,8 @@ final class ScheduleViewController: BasicViewController {
             doneButton.heightAnchor.constraint(equalToConstant: 60),
             
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             tableView.heightAnchor.constraint(equalToConstant: CGFloat(WeekDays.count*75))
         ])
     }
@@ -111,7 +111,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == WeekDays.count - 1 {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tableView.bounds.width)
         } else {
-            cell.separatorInset = Insets.separatorInset
+            cell.separatorInset = Inset.separatorInset
         }
     }
     
@@ -122,14 +122,14 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = day.description
         
         let switchView = UISwitch()
-        switchView.onTintColor = AppColors.Fixed.blue
+        switchView.onTintColor = AppColor.Fixed.blue
         switchView.isOn = selectedDays.contains(day)
         switchView.tag = indexPath.row + 1
         switchView.addTarget(self, action: #selector(switchChanged(_:)), for: .valueChanged)
         cell.accessoryView = switchView
         
-        cell.backgroundColor = AppColors.Dynamic.background
-        cell.layoutMargins = Insets.cellInsets
+        cell.backgroundColor = AppColor.Dynamic.background
+        cell.layoutMargins = Inset.cellInsets
         
         return cell
     }

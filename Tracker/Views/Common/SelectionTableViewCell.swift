@@ -11,8 +11,8 @@ final class SelectionTableViewCell: UITableViewCell {
     
     let label: UILabel = {
         let label = UILabel()
-        label.font = Fonts.titleMediumFont
-        label.textColor = AppColors.Dynamic.black
+        label.font = Font.titleMediumFont
+        label.textColor = AppColor.Dynamic.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -58,6 +58,6 @@ final class SelectionTableViewCell: UITableViewCell {
         label.text = text
         selectedImageView.image = isSelected ? UIImage(named: "Done") : nil
         
-        contentView.backgroundColor = AppColors.Dynamic.background
+        contentView.backgroundColor = AppColor.Dynamic.background
     }
 }

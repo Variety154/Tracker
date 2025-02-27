@@ -27,7 +27,7 @@ final class TrackerStore: BasicStore {
             if let pinnedObjects = pinnedController.fetchedObjects {
                 let pinnedTrackers: [Tracker] = pinnedObjects.compactMap { try? from($0, for: date) }
                 if !pinnedTrackers.isEmpty {
-                    let pinnedCategory = TrackerCategory(title: LocalizedStrings.Trackers.pinnedCategoryText, trackers: pinnedTrackers)
+                    let pinnedCategory = TrackerCategory(title: LocalizedString.Trackers.pinnedCategoryText, trackers: pinnedTrackers)
                     trackerCategories.append(pinnedCategory)
                 }
             }

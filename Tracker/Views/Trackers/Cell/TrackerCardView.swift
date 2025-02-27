@@ -13,7 +13,7 @@ final class TrackerCardView: UIView {
     
     lazy var emojiLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.titleMediumFont
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -21,8 +21,8 @@ final class TrackerCardView: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = Fonts.labelFont
-        label.textColor = AppColors.Fixed.white
+        label.font = Font.labelFont
+        label.textColor = AppColor.Fixed.white
         label.numberOfLines = 2
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,9 +46,9 @@ final class TrackerCardView: UIView {
     // MARK: - Private Methods
     
     private func setupAppearance() {
-        self.layer.cornerRadius = Constants.radius
-        self.clipsToBounds = true
-        self.translatesAutoresizingMaskIntoConstraints = false
+        layer.cornerRadius = Constant.radius
+        clipsToBounds = true
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupLayout() {

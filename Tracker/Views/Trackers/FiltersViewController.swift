@@ -15,7 +15,7 @@ final class FiltersViewController: BasicViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("filters.title", comment: "Filters screen title")
-        label.font = Fonts.titleMediumFont
+        label.font = Font.titleMediumFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -23,9 +23,9 @@ final class FiltersViewController: BasicViewController {
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = AppColors.Dynamic.white
+        table.backgroundColor = AppColor.Dynamic.white
         table.register(SelectionTableViewCell.self, forCellReuseIdentifier: "cell")
-        table.layer.cornerRadius = Constants.radius
+        table.layer.cornerRadius = Constant.radius
         table.delegate = self
         table.dataSource = self
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ final class FiltersViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         setupLayout()
         tableView.reloadData()
     }
@@ -60,8 +60,8 @@ final class FiltersViewController: BasicViewController {
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -70,7 +70,7 @@ final class FiltersViewController: BasicViewController {
 // MARK: - UITableViewDataSource и UITableViewDelegate
 extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Filters.allCases.count
+        return Filter.allCases.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,7 +78,7 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let count = Filters.allCases.count
+        let count = Filter.allCases.count
         
         cell.layer.mask = nil
         
@@ -92,7 +92,7 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
             cell.layer.mask = maskLayer
         } else {
             cell.layer.mask = nil
-            cell.separatorInset = Insets.separatorInset
+            cell.separatorInset = Inset.separatorInset
         }
     }
     
@@ -101,12 +101,12 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let filter = Filters.allCases[indexPath.row]
+        let filter = Filter.allCases[indexPath.row]
         let isSelected = filter == delegate.currentFilter
         
         cell.configure(text: filter.localized, isSelected: isSelected)
-        cell.backgroundColor = AppColors.Dynamic.background
-        cell.layoutMargins = Insets.cellInsets
+        cell.backgroundColor = AppColor.Dynamic.background
+        cell.layoutMargins = Inset.cellInsets
         
         return cell
     }
@@ -117,7 +117,7 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedFilter = Filters.allCases[indexPath.row]
+        let selectedFilter = Filter.allCases[indexPath.row]
         delegate.didSelectFilter(filter: selectedFilter)
         
         Log.info(message: "reporting filter selection event")

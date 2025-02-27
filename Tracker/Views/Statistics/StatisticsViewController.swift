@@ -25,7 +25,7 @@ final class StatisticsViewController: BasicViewController {
     
     private lazy var placeHolderView: PlaceHolderView = {
         let view = PlaceHolderView()
-        view.setText(text: LocalizedStrings.Statistics.placeholderText)
+        view.setText(text: LocalizedString.Statistic.placeholderText)
         view.setImage(name: "Nothing")
         view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +53,7 @@ final class StatisticsViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppColors.Dynamic.white
+        view.backgroundColor = AppColor.Dynamic.white
         setupView()
     }
     
@@ -79,12 +79,12 @@ final class StatisticsViewController: BasicViewController {
     }
     
     private func setupView() {
-        self.title = LocalizedStrings.Statistics.title
+        self.title = LocalizedString.Statistic.title
         definesPresentationContext = true
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: Fonts.titleLargeFont
+            NSAttributedString.Key.font: Font.titleLargeFont
         ]
         navigationItem.largeTitleDisplayMode = .always
         
@@ -107,8 +107,8 @@ final class StatisticsViewController: BasicViewController {
             
             placeHolderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             placeHolderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Insets.leading),
-            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Insets.trailing),
+            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Inset.leading),
+            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Inset.trailing),
             
             loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),

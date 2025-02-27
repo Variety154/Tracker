@@ -54,15 +54,15 @@ extension TrackersViewController: UICollectionViewDelegate {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.text = sectionTitle
             label.textAlignment = .left
-            label.textColor = AppColors.Dynamic.black
-            label.font = Fonts.sectionHeaderFont
+            label.textColor = AppColor.Dynamic.black
+            label.font = Font.sectionHeaderFont
             
             headerView.subviews.forEach { $0.removeFromSuperview() }
             headerView.addSubview(label)
             
             NSLayoutConstraint.activate([
                 label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 28),
-                label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: Insets.top),
+                label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: Inset.top),
             ])
             
             return headerView

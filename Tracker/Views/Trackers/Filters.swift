@@ -8,11 +8,11 @@
 import Foundation
 
 protocol FilterDelegateProtocol {
-    var currentFilter: Filters { get }
-    func didSelectFilter(filter: Filters)
+    var currentFilter: Filter { get }
+    func didSelectFilter(filter: Filter)
 }
 
-enum Filters: String, CaseIterable {
+enum Filter: String, CaseIterable {
     case allTrackers = "filters.all_trackers"
     case todayTrackers = "filters.today_trackers"
     case completed = "filters.completed"
